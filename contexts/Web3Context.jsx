@@ -26,7 +26,7 @@ export const Web3Context = ({children}) => {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider theme={darkTheme()} modalSize='compact'>
+        <RainbowKitProvider theme={darkTheme()} modalSize='compact' initialChain={mainnet}>
           {children}
         </RainbowKitProvider>
       </QueryClientProvider>
