@@ -154,7 +154,7 @@ export default function Home({
         <HeroSection />
         <Marquee
           identifier="utilities-marq"
-          text1="Minting Soon"
+          text1="Minting"
           text2="Turn your digital asset into your real life statue"
         />
         <UtilitySection />
