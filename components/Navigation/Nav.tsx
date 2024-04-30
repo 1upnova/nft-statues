@@ -48,7 +48,9 @@ export default function Nav() {
           <NavItem href="#team" text="Team" />
           <NavItem href="#faq" text="FAQ" />
         </nav>
-        <ConnectButton />
+        <div className="rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 ease-out">
+          <ConnectButton />
+        </div>
       </div>
     </div>
   );
