@@ -329,12 +329,8 @@ export default function MintDrawer() {
             <div className="flex flex-col items-center justify-center gap-2">
               {!title && !Price ? (
                 <>
-                  <span className="block text-white text-2xl lg:text-4xl font-medium tracking-tighter">
+                  <span className="block max-w-[65%] text-center text-white text-2xl lg:text-4xl font-medium tracking-tighter">
                     Please select statue
-                  </span>
-                  <span className="block invisible text-white opacity-[.4] text-lg lg:text-xl font-normal tracking-tighter text-center">
-                    {formatEther(Price ? Price : 0)} {isApe ? "APE" : "ETH"}{" "}
-                    Price
                   </span>
                 </>
               ) : (
@@ -350,26 +346,29 @@ export default function MintDrawer() {
             </div>
             {/* <button className="md:w-[52px] w-[30px] md:h-[52px] h-[30px] bg-[url(/static/images/mint-popup-arrow.png)] bg-center bg-no-repeat bg-cover transform rotate-180 hover:scale-105 transition-transform duration-300 ease-out"></button> */}
           </div>
-          <div className="py-16 absolute lg:left-10 bottom-20 left-5 font-medium tracking-tighter lg:bottom-0 text-center">
-            <Switch
-              checked={isApe}
-              onChange={setIsApe}
-              className={`${isApe ? "bg-[#ff3600]" : "bg-red-400"}
+
+          {title ? (
+            <div className="py-16 absolute lg:left-10 bottom-20 left-5 font-medium tracking-tighter lg:bottom-0 text-center">
+              <Switch
+                checked={isApe}
+                onChange={setIsApe}
+                className={`${isApe ? "bg-[#ff3600]" : "bg-red-400"}
           relative inline-flex h-[28px] w-[64px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white/75`}
-            >
-              <span className="sr-only white">Use APE</span>
-              <span
-                aria-hidden="true"
-                className={`${
-                  isApe
-                    ? "translate-x-9 bg-gray-100"
-                    : "translate-x-0 bg-gray-900"
-                }
+              >
+                <span className="sr-only white">Use APE</span>
+                <span
+                  aria-hidden="true"
+                  className={`${
+                    isApe
+                      ? "translate-x-9 bg-gray-100"
+                      : "translate-x-0 bg-gray-900"
+                  }
             pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out`}
-              />
-            </Switch>
-            <h6 className="text-white mt-2 text-sm">Use APE</h6>
-          </div>
+                />
+              </Switch>
+              <h6 className="text-white mt-2 text-sm">Use APE</h6>
+            </div>
+          ) : null}
           <button
             onClick={() => {
               // setLoading(true);
